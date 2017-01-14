@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3266F8691E2AC89D008C9065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3266F8681E2AC89D008C9065 /* AppDelegate.swift */; };
+		3266F86B1E2AC89D008C9065 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3266F86A1E2AC89D008C9065 /* ViewController.swift */; };
+		3266F86E1E2AC89D008C9065 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3266F86C1E2AC89D008C9065 /* Main.storyboard */; };
+		3266F8701E2AC89D008C9065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3266F86F1E2AC89D008C9065 /* Assets.xcassets */; };
+		3266F8731E2AC89D008C9065 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3266F8711E2AC89D008C9065 /* LaunchScreen.storyboard */; };
+		3266F87E1E2AC89D008C9065 /* poznaj_app_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3266F87D1E2AC89D008C9065 /* poznaj_app_iosTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3266F87A1E2AC89D008C9065 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3266F85D1E2AC89D008C9065 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3266F8641E2AC89D008C9065;
+			remoteInfo = "poznaj-app-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3266F8651E2AC89D008C9065 /* poznaj-app-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "poznaj-app-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3266F8681E2AC89D008C9065 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3266F86A1E2AC89D008C9065 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3266F86D1E2AC89D008C9065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3266F86F1E2AC89D008C9065 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3266F8721E2AC89D008C9065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3266F8741E2AC89D008C9065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3266F8791E2AC89D008C9065 /* poznaj-app-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "poznaj-app-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3266F87D1E2AC89D008C9065 /* poznaj_app_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = poznaj_app_iosTests.swift; sourceTree = "<group>"; };
+		3266F87F1E2AC89D008C9065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3266F8621E2AC89D008C9065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3266F8761E2AC89D008C9065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3266F85C1E2AC89D008C9065 = {
+			isa = PBXGroup;
+			children = (
+				3266F8671E2AC89D008C9065 /* poznaj-app-ios */,
+				3266F87C1E2AC89D008C9065 /* poznaj-app-iosTests */,
+				3266F8661E2AC89D008C9065 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3266F8661E2AC89D008C9065 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3266F8651E2AC89D008C9065 /* poznaj-app-ios.app */,
+				3266F8791E2AC89D008C9065 /* poznaj-app-iosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3266F8671E2AC89D008C9065 /* poznaj-app-ios */ = {
+			isa = PBXGroup;
+			children = (
+				3266F8681E2AC89D008C9065 /* AppDelegate.swift */,
+				3266F86A1E2AC89D008C9065 /* ViewController.swift */,
+				3266F86C1E2AC89D008C9065 /* Main.storyboard */,
+				3266F86F1E2AC89D008C9065 /* Assets.xcassets */,
+				3266F8711E2AC89D008C9065 /* LaunchScreen.storyboard */,
+				3266F8741E2AC89D008C9065 /* Info.plist */,
+			);
+			path = "poznaj-app-ios";
+			sourceTree = "<group>";
+		};
+		3266F87C1E2AC89D008C9065 /* poznaj-app-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				3266F87D1E2AC89D008C9065 /* poznaj_app_iosTests.swift */,
+				3266F87F1E2AC89D008C9065 /* Info.plist */,
+			);
+			path = "poznaj-app-iosTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3266F8641E2AC89D008C9065 /* poznaj-app-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3266F8821E2AC89D008C9065 /* Build configuration list for PBXNativeTarget "poznaj-app-ios" */;
+			buildPhases = (
+				3266F8611E2AC89D008C9065 /* Sources */,
+				3266F8621E2AC89D008C9065 /* Frameworks */,
+				3266F8631E2AC89D008C9065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "poznaj-app-ios";
+			productName = "poznaj-app-ios";
+			productReference = 3266F8651E2AC89D008C9065 /* poznaj-app-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3266F8781E2AC89D008C9065 /* poznaj-app-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3266F8851E2AC89D008C9065 /* Build configuration list for PBXNativeTarget "poznaj-app-iosTests" */;
+			buildPhases = (
+				3266F8751E2AC89D008C9065 /* Sources */,
+				3266F8761E2AC89D008C9065 /* Frameworks */,
+				3266F8771E2AC89D008C9065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3266F87B1E2AC89D008C9065 /* PBXTargetDependency */,
+			);
+			name = "poznaj-app-iosTests";
+			productName = "poznaj-app-iosTests";
+			productReference = 3266F8791E2AC89D008C9065 /* poznaj-app-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3266F85D1E2AC89D008C9065 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Daniel;
+				TargetAttributes = {
+					3266F8641E2AC89D008C9065 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = F57YLL8TFF;
+						ProvisioningStyle = Automatic;
+					};
+					3266F8781E2AC89D008C9065 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = F57YLL8TFF;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3266F8641E2AC89D008C9065;
+					};
+				};
+			};
+			buildConfigurationList = 3266F8601E2AC89D008C9065 /* Build configuration list for PBXProject "poznaj-app-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3266F85C1E2AC89D008C9065;
+			productRefGroup = 3266F8661E2AC89D008C9065 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3266F8641E2AC89D008C9065 /* poznaj-app-ios */,
+				3266F8781E2AC89D008C9065 /* poznaj-app-iosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3266F8631E2AC89D008C9065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3266F8731E2AC89D008C9065 /* LaunchScreen.storyboard in Resources */,
+				3266F8701E2AC89D008C9065 /* Assets.xcassets in Resources */,
+				3266F86E1E2AC89D008C9065 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3266F8771E2AC89D008C9065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3266F8611E2AC89D008C9065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3266F86B1E2AC89D008C9065 /* ViewController.swift in Sources */,
+				3266F8691E2AC89D008C9065 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3266F8751E2AC89D008C9065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3266F87E1E2AC89D008C9065 /* poznaj_app_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3266F87B1E2AC89D008C9065 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3266F8641E2AC89D008C9065 /* poznaj-app-ios */;
+			targetProxy = 3266F87A1E2AC89D008C9065 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3266F86C1E2AC89D008C9065 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3266F86D1E2AC89D008C9065 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3266F8711E2AC89D008C9065 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3266F8721E2AC89D008C9065 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3266F8801E2AC89D008C9065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3266F8811E2AC89D008C9065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3266F8831E2AC89D008C9065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F57YLL8TFF;
+				INFOPLIST_FILE = "poznaj-app-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.daniel.poznaj-app-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3266F8841E2AC89D008C9065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F57YLL8TFF;
+				INFOPLIST_FILE = "poznaj-app-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.daniel.poznaj-app-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3266F8861E2AC89D008C9065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = F57YLL8TFF;
+				INFOPLIST_FILE = "poznaj-app-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.daniel.poznaj-app-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/poznaj-app-ios.app/poznaj-app-ios";
+			};
+			name = Debug;
+		};
+		3266F8871E2AC89D008C9065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = F57YLL8TFF;
+				INFOPLIST_FILE = "poznaj-app-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.daniel.poznaj-app-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/poznaj-app-ios.app/poznaj-app-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3266F8601E2AC89D008C9065 /* Build configuration list for PBXProject "poznaj-app-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3266F8801E2AC89D008C9065 /* Debug */,
+				3266F8811E2AC89D008C9065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3266F8821E2AC89D008C9065 /* Build configuration list for PBXNativeTarget "poznaj-app-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3266F8831E2AC89D008C9065 /* Debug */,
+				3266F8841E2AC89D008C9065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3266F8851E2AC89D008C9065 /* Build configuration list for PBXNativeTarget "poznaj-app-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3266F8861E2AC89D008C9065 /* Debug */,
+				3266F8871E2AC89D008C9065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3266F85D1E2AC89D008C9065 /* Project object */;
+}
