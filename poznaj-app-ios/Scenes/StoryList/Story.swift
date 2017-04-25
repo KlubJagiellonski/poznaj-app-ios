@@ -32,27 +32,29 @@ struct Story : Equatable {
     let title: String
     let description: String
     let duration: Duration
-    let points : [Point]
+    let points : [ApiIDableObject<Point>]
 }
 
 func ==(lhs: Story, rhs: Story) -> Bool {
     return lhs.id == rhs.id
 }
 
-enum ApiThing<T> {
-    case id(Int)
-    case thing(T)
+
+enum ApiIDableObject<T> : ExpressibleByIntegerLiteral {
+
+    case id(UInt)
+    case object(T)
+    
+    public init(integerLiteral value: IntegerLiteralType){
+        self = .id(UInt(value))
+    }
+    
 }
 
 struct Point {
     let coordinate : CLLocationCoordinate2D
     let title : String
     let description : String
-    let images : [ApiThing<UIImage>]
+    let images : [ApiIDableObject<NSURL>]
 
-}
-
-enum AnImage{
-    case id(Int)
-    case image(UIImage)
 }

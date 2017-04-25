@@ -23,7 +23,11 @@ class StoryListViewController: UITableViewController, StoryListViewModelBoundary
     var router: StoryListRouter!
 
     //
-    var stories : [StoryList.ViewModel.Story] = []
+    var stories : [StoryList.ViewModel.Story] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     //UI
     

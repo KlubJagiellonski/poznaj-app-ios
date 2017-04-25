@@ -13,64 +13,83 @@
 import XCTest
 
 class StoryListViewControllerOutputSpy : StoryListRequestBoundary {
-
-  var fetched = false
-
-  func fetchStories() {
-    fetched = true
-  }
-
+    
+    var fetched = false
+    
+    func fetchStories() {
+        fetched = true
+    }
+    
 }
 
 class StoryListViewControllerTests: XCTestCase
 {
-  // MARK: - Subject under test
-  
-  var sut: StoryListViewController!
-  var window: UIWindow!
-  
-  // MARK: - Test lifecycle
-  
-  override func setUp()
-  {
-    super.setUp()
-    window = UIWindow()
-    setupStoryListViewController()
-  }
-  
-  override func tearDown()
-  {
-    window = nil
-    super.tearDown()
-  }
-  
-  // MARK: - Test setup
-  
-  func setupStoryListViewController()
-  {
-    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.init(for: StoryListViewController.self))
-    sut = storyboard.instantiateViewController(withIdentifier: "StoryListViewController") as! StoryListViewController
-  }
-  
-  func loadView()
-  {
-    window.addSubview(sut.view)
-    RunLoop.current.run(until: Date())
-  }
-  
-  // MARK: - Test doubles
-  
-  // MARK: - Tests
-  
-  func testFetchStoriesOnViewDidLoad()
-  {
-    // Given
-    let spy = StoryListViewControllerOutputSpy()
-    sut.output = spy
-    // When
-    loadView()
-
-    // Then
-    XCTAssert(spy.fetched)
-  }
+    // MARK: - Subject under test
+    
+    var sut: StoryListViewController!
+    var window: UIWindow!
+    
+    // MARK: - Test lifecycle
+    
+    override func setUp()
+    {
+        super.setUp()
+        window = UIWindow()
+        setupStoryListViewController()
+    }
+    
+    override func tearDown()
+    {
+        window = nil
+        super.tearDown()
+    }
+    
+    // MARK: - Test setup
+    
+    func setupStoryListViewController()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.init(for: StoryListViewController.self))
+        sut = storyboard.instantiateViewController(withIdentifier: "StoryListViewController") as! StoryListViewController
+    }
+    
+    func loadView()
+    {
+        window.addSubview(sut.view)
+        RunLoop.current.run(until: Date())
+    }
+    
+    // MARK: - Test doubles
+    
+    // MARK: - Tests
+    
+    func testFetchStoriesOnViewDidLoad()
+    {
+        // Given
+        let spy = StoryListViewControllerOutputSpy()
+        sut.output = spy
+        // When
+        loadView()
+        
+        // Then
+        XCTAssert(spy.fetched)
+    }
+    
+    func testCellConfigured(){
+        loadView()
+        // Given
+        let title = "aTitle"
+        let description = "some really fancy description"
+        let durationString = "12:15"
+        let numberOfPoints = "10"
+        
+        
+        sut.stories = [StoryList.ViewModel.Story(title:title,description:description,duration:durationString,numberOfPoints:numberOfPoints)]
+        
+        //Then
+        XCTAssert(sut.tableView.numberOfRows(inSection: 0) == 1)
+        let cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? StoryListCell
+        XCTAssert(cell != nil && cell!.title.text == title && cell!.aDescription.text == description && cell?.duration.text == durationString && cell?.numberOfPoints.text == numberOfPoints)
+        
+       
+    }
 }

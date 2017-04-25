@@ -15,49 +15,63 @@ extension CLLocationCoordinate2D {
     }
 }
 
+struct ApiImage{
+    let id : UInt
+    let title : String
+    let url : String
+}
+
+struct ApiStory {
+    let id : UInt
+    let title : String
+    let description : String
+    let duration : String
+    let first_point : UInt
+    let points : [UInt]
+}
+
+struct ApiPoint {
+    let id : UInt
+    let coordinates : (Double,Double)
+    let title : String
+    let description : String
+    let images : [ApiImage]
+}
+
 class MockedStore : Store {
+    
+    let stories = [
+        ApiStory(id: 1, title: "Story 1", description: "This is description of story 1", duration: "3:4", first_point: 4, points: [4,2,1,3])
+    ]
+    
+    static let images = [
+        ApiImage(id: 1, title: "Image 1", url: ""),
+        ApiImage(id: 2, title: "Image 2", url: ""),
+        ApiImage(id: 3, title: "Image 3", url: ""),
+        ApiImage(id: 4, title: "Image 4", url: ""),
+        ]
+    
+    let points = [
+        ApiPoint(id:1, coordinates: (2.0, 1.4), title: "", description: "", images: [images[0],images[1]]),
+        ApiPoint(id:2, coordinates: (2.0, 1.4), title: "", description: "", images: [images[2],images[3]]),
+        ApiPoint(id:3, coordinates: (2.0, 1.4), title: "", description: "", images: [images[0],images[1]]),
+        ApiPoint(id:4, coordinates: (2.0, 1.4), title: "", description: "", images: [images[2],images[3]])
+    ]
+    
+    
+    
     func fetchStories(_ completionHandler: @escaping(_ stories:[Story], _ error: StoreError? ) -> ()) {
-        completionHandler([
-                    Story(id: 1, title: "Story 1", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus tellus ipsum, et hendrerit est posuere nec. Suspendisse scelerisque nisl diam, a pretium tortor accumsan ut. Cras fringilla, felis ac mattis tincidunt, lectus purus scelerisque velit, ac fringilla ipsum nisl et nulla. Aenean venenatis at lacus sed malesuada. Morbi arcu felis, volutpat sit amet cursus non, egestas ac mi. In hac habitasse platea dictumst. Mauris volutpat leo nibh, et mollis dui vulputate id. Etiam placerat, lorem ultricies dapibus consequat, diam massa molestie sapien, sed hendrerit sem justo eu turpis. Quisque consectetur at dolor accumsan sodales. Etiam nec risus malesuada, sodales nisi dapibus, lacinia libero. Donec ultricies eleifend elit vel tincidunt. Nam sit amet massa eleifend, tristique arcu posuere, imperdiet mi. Maecenas ac elit eu velit pharetra euismod.", duration: Duration(string:"03:05")!, points:[
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 1", description: "Description 1", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 2", description: "Description 2", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 3", description: "Description 3", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 4", description: "Description 4", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 5", description: "Description 5", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 6", description: "Description 6", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 7", description: "Description 7", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 8", description: "Description 8", images:[])
-                        ]),
-                    Story(id: 2, title: "Story 2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus tellus ipsum, et hendrerit est posuere nec. Suspendisse scelerisque nisl diam, a pretium tortor accumsan ut. Cras fringilla, felis ac mattis tincidunt, lectus purus scelerisque velit, ac fringilla ipsum nisl et nulla. Aenean venenatis at lacus sed malesuada. Morbi arcu felis, volutpat sit amet cursus non, egestas ac mi. In hac habitasse platea dictumst. Mauris volutpat leo nibh, et mollis dui vulputate id. Etiam placerat, lorem ultricies dapibus consequat, diam massa molestie sapien, sed hendrerit sem justo eu turpis. Quisque consectetur at dolor accumsan sodales. Etiam nec risus malesuada, sodales nisi dapibus, lacinia libero. Donec ultricies eleifend elit vel tincidunt. Nam sit amet massa eleifend, tristique arcu posuere, imperdiet mi. Maecenas ac elit eu velit pharetra euismod.", duration: Duration(string:"04:05")!, points:[
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 1", description: "Description 1", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 2", description: "Description 2", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 3", description: "Description 3", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 4", description: "Description 4", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 5", description: "Description 5", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 6", description: "Description 6", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 7", description: "Description 7", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 8", description: "Description 8", images:[])
-                        ]),
-                    Story(id: 3, title: "Story 3", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus tellus ipsum, et hendrerit est posuere nec. Suspendisse scelerisque nisl diam, a pretium tortor accumsan ut. Cras fringilla, felis ac mattis tincidunt, lectus purus scelerisque velit, ac fringilla ipsum nisl et nulla. Aenean venenatis at lacus sed malesuada. Morbi arcu felis, volutpat sit amet cursus non, egestas ac mi. In hac habitasse platea dictumst. Mauris volutpat leo nibh, et mollis dui vulputate id. Etiam placerat, lorem ultricies dapibus consequat, diam massa molestie sapien, sed hendrerit sem justo eu turpis. Quisque consectetur at dolor accumsan sodales. Etiam nec risus malesuada, sodales nisi dapibus, lacinia libero. Donec ultricies eleifend elit vel tincidunt. Nam sit amet massa eleifend, tristique arcu posuere, imperdiet mi. Maecenas ac elit eu velit pharetra euismod.", duration: Duration(string:"05:00")!, points:[
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 1", description: "Description 1", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 2", description: "Description 2", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 3", description: "Description 3", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 4", description: "Description 4", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 5", description: "Description 5", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 6", description: "Description 6", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 7", description: "Description 7", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 8", description: "Description 8", images:[])
-                        ]),
-                    Story(id: 4, title: "Story 4", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus tellus ipsum, et hendrerit est posuere nec. Suspendisse scelerisque nisl diam, a pretium tortor accumsan ut. Cras fringilla, felis ac mattis tincidunt, lectus purus scelerisque velit, ac fringilla ipsum nisl et nulla. Aenean venenatis at lacus sed malesuada. Morbi arcu felis, volutpat sit amet cursus non, egestas ac mi. In hac habitasse platea dictumst. Mauris volutpat leo nibh, et mollis dui vulputate id. Etiam placerat, lorem ultricies dapibus consequat, diam massa molestie sapien, sed hendrerit sem justo eu turpis. Quisque consectetur at dolor accumsan sodales. Etiam nec risus malesuada, sodales nisi dapibus, lacinia libero. Donec ultricies eleifend elit vel tincidunt. Nam sit amet massa eleifend, tristique arcu posuere, imperdiet mi. Maecenas ac elit eu velit pharetra euismod.", duration: Duration(string:"02:25")!, points:[
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 1", description: "Description 1", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 2", description: "Description 2", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 3", description: "Description 3", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 4", description: "Description 4", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 5", description: "Description 5", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 6", description: "Description 6", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 7", description: "Description 7", images:[]),
-                        Point(coordinate:CLLocationCoordinate2D(51.106753, 17.031984), title: "Title 8", description: "Description 8", images:[])
-                        ])
-            ], nil)
+        completionHandler(
+            stories.map({ (apiStory:ApiStory) -> Story in
+                return Story(id:Int64(apiStory.id), title:apiStory.title, description: apiStory.description, duration: Duration(string: apiStory.duration)!, points: apiStory.points.map({ (id) -> ApiIDableObject<Point> in
+                        return ApiIDableObject.id(id)
+                }) )
+            })
+            , nil)
     }
+    
+    internal func fetchStoryDetails(_ completionHandler: @escaping ([Point], StoreError?) -> ()) {
+        completionHandler({points.map({Point(coordinate:CLLocationCoordinate2D($0.coordinates.0, $0.coordinates.1), title:$0.title, description:$0.description, images:$0.images.map({ApiIDableObject.object(NSURL(string: $0.url)!)}))})}(),nil)
+    }
+
 }

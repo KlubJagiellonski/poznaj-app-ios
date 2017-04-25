@@ -11,6 +11,10 @@ import Alamofire
 import AlamofireSwiftyJSON
 
 class APIStore : Store {
+    internal func fetchStoryDetails(_ completionHandler: @escaping ([Point], StoreError?) -> ()) {
+        completionHandler([],nil)
+    }
+
     func fetchStories(_ completionHandler: @escaping ([Story], StoreError?) -> ()) {
         Alamofire.request("https://poznaj-wroclaw.herokuapp.com/api/stories/").responseSwiftyJSON { response in
             if let json = response.result.value {
