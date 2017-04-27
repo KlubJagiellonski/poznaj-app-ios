@@ -75,14 +75,14 @@ class StoryListViewControllerTests: XCTestCase
     }
     
     func testCellConfigured(){
-        loadView()
+       
         // Given
         let title = "aTitle"
         let description = "some really fancy description"
         let durationString = "12:15"
         let numberOfPoints = "10"
         
-        
+        loadView()
         sut.stories = [StoryList.ViewModel.Story(title:title,description:description,duration:durationString,numberOfPoints:numberOfPoints)]
         
         //Then

@@ -98,6 +98,7 @@
                                     <outlet property="numberOfPoints" destination="egI-OF-8jP" id="osd-jx-m1E"/>
                                     <outlet property="photo" destination="qfj-Te-wja" id="WV6-hg-GXp"/>
                                     <outlet property="title" destination="GjQ-Pf-O9d" id="a6d-t0-x8I"/>
+                                    <segue destination="crO-LL-oyT" kind="showDetail" identifier="s" id="X1O-7T-fZb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -115,6 +116,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6H-q0-dxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="144.3778110944528"/>
+        </scene>
+        <!--Story Details View Controller-->
+        <scene sceneID="WaY-4P-ZQV">
+            <objects>
+                <viewController id="crO-LL-oyT" customClass="StoryDetailsViewController" customModule="poznaj_app_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KUV-iW-vtW"/>
+                        <viewControllerLayoutGuide type="bottom" id="luO-KE-IEK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="69d-xO-pD0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wRS-SN-uUi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H5a-bk-O0p">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="tNu-pc-hTA"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NC1-6S-qba">
+                                        <rect key="frame" x="0.0" y="200" width="375" height="211"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-gk-0Ft">
+                                        <rect key="frame" x="0.0" y="411" width="375" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="vYr-Q6-tCp"/>
+                                        </constraints>
+                                    </mapView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaW-iR-SaY" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                        <rect key="frame" x="0.0" y="539" width="375" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="9mH-wu-FE5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wRS-SN-uUi" firstAttribute="leading" secondItem="69d-xO-pD0" secondAttribute="leading" id="HGt-bC-EKn"/>
+                            <constraint firstAttribute="trailing" secondItem="wRS-SN-uUi" secondAttribute="trailing" id="ciC-7O-yit"/>
+                            <constraint firstItem="wRS-SN-uUi" firstAttribute="top" secondItem="69d-xO-pD0" secondAttribute="top" id="n9o-x1-r5b"/>
+                            <constraint firstItem="luO-KE-IEK" firstAttribute="top" secondItem="wRS-SN-uUi" secondAttribute="bottom" id="sqQ-eh-XOo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="NC1-6S-qba" id="e7O-ak-WCk"/>
+                        <outlet property="mainImageView" destination="H5a-bk-O0p" id="lf3-4d-uSg"/>
+                        <outlet property="mapView" destination="YKb-gk-0Ft" id="VTA-cD-Aia"/>
+                        <outlet property="slideShow" destination="QaW-iR-SaY" id="aFp-cc-NkA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yu8-Y4-jEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="144.3778110944528"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3201EE701EB0715300C9E28A /* StoryDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3201EE691EB0715300C9E28A /* StoryDetailsConfigurator.swift */; };
+		3201EE711EB0715300C9E28A /* StoryDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3201EE6A1EB0715300C9E28A /* StoryDetailsInteractor.swift */; };
+		3201EE721EB0715300C9E28A /* StoryDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3201EE6B1EB0715300C9E28A /* StoryDetailsModels.swift */; };
+		3201EE731EB0715300C9E28A /* StoryDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3201EE6C1EB0715300C9E28A /* StoryDetailsPresenter.swift */; };
+		3201EE741EB0715300C9E28A /* StoryDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3201EE6D1EB0715300C9E28A /* StoryDetailsRouter.swift */; };
+		3201EE751EB0715300C9E28A /* StoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3201EE6E1EB0715300C9E28A /* StoryDetailsViewController.swift */; };
+		3201EE761EB0715300C9E28A /* StoryDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3201EE6F1EB0715300C9E28A /* StoryDetailsWorker.swift */; };
 		3237A40B1E9D441400694EFD /* StoryListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237A4071E9D441400694EFD /* StoryListInteractorTests.swift */; };
 		3237A40C1E9D441400694EFD /* StoryListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237A4081E9D441400694EFD /* StoryListPresenterTests.swift */; };
 		3237A40D1E9D441400694EFD /* StoryListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237A4091E9D441400694EFD /* StoryListViewControllerTests.swift */; };
@@ -57,6 +64,13 @@
 
 /* Begin PBXFileReference section */
 		0399A276A658E1404E4B4899 /* Pods_poznaj_app_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_poznaj_app_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3201EE691EB0715300C9E28A /* StoryDetailsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailsConfigurator.swift; sourceTree = "<group>"; };
+		3201EE6A1EB0715300C9E28A /* StoryDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailsInteractor.swift; sourceTree = "<group>"; };
+		3201EE6B1EB0715300C9E28A /* StoryDetailsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailsModels.swift; sourceTree = "<group>"; };
+		3201EE6C1EB0715300C9E28A /* StoryDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailsPresenter.swift; sourceTree = "<group>"; };
+		3201EE6D1EB0715300C9E28A /* StoryDetailsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailsRouter.swift; sourceTree = "<group>"; };
+		3201EE6E1EB0715300C9E28A /* StoryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailsViewController.swift; sourceTree = "<group>"; };
+		3201EE6F1EB0715300C9E28A /* StoryDetailsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetailsWorker.swift; sourceTree = "<group>"; };
 		3237A4071E9D441400694EFD /* StoryListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryListInteractorTests.swift; sourceTree = "<group>"; };
 		3237A4081E9D441400694EFD /* StoryListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryListPresenterTests.swift; sourceTree = "<group>"; };
 		3237A4091E9D441400694EFD /* StoryListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryListViewControllerTests.swift; sourceTree = "<group>"; };
@@ -118,6 +132,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3201EE681EB0710B00C9E28A /* StoryDetails */ = {
+			isa = PBXGroup;
+			children = (
+				3201EE691EB0715300C9E28A /* StoryDetailsConfigurator.swift */,
+				3201EE6A1EB0715300C9E28A /* StoryDetailsInteractor.swift */,
+				3201EE6B1EB0715300C9E28A /* StoryDetailsModels.swift */,
+				3201EE6C1EB0715300C9E28A /* StoryDetailsPresenter.swift */,
+				3201EE6D1EB0715300C9E28A /* StoryDetailsRouter.swift */,
+				3201EE6E1EB0715300C9E28A /* StoryDetailsViewController.swift */,
+				3201EE6F1EB0715300C9E28A /* StoryDetailsWorker.swift */,
+			);
+			path = StoryDetails;
+			sourceTree = "<group>";
+		};
 		3266F85C1E2AC89D008C9065 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +203,7 @@
 		79A33349E71E799A7EAEBDF8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3201EE681EB0710B00C9E28A /* StoryDetails */,
 				79A336E90A4E82322C345125 /* StoryList */,
 			);
 			path = Scenes;
@@ -426,18 +455,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				3266F8691E2AC89D008C9065 /* AppDelegate.swift in Sources */,
+				3201EE731EB0715300C9E28A /* StoryDetailsPresenter.swift in Sources */,
 				79A33D2A87EC57A760EC209E /* StoryListConfigurator.swift in Sources */,
+				3201EE741EB0715300C9E28A /* StoryDetailsRouter.swift in Sources */,
 				79A33E0F75DF1C611CFAE7C2 /* StoryListInteractor.swift in Sources */,
 				79A33B22A3566DBD7C4F78E7 /* StoryListModels.swift in Sources */,
 				79A33CB2B6CBC73300113895 /* StoryListPresenter.swift in Sources */,
 				79A33584BC66728CDE52BAD6 /* StoryListRouter.swift in Sources */,
 				79A334E80767733114C22DF9 /* StoryListViewController.swift in Sources */,
+				3201EE701EB0715300C9E28A /* StoryDetailsConfigurator.swift in Sources */,
 				79A33C66B1F3B7B03BA64A02 /* FetchStoriesWorker.swift in Sources */,
 				79A334128CED7FB93CA0B20B /* Story.swift in Sources */,
 				79A330C30C0094FDC9679DEC /* Store.swift in Sources */,
 				79A3394AD3498A97341CA285 /* APIStore.swift in Sources */,
 				79A332B6D1ACF84CBB14401F /* MockedStore.swift in Sources */,
 				79A3314B04137417A938A696 /* StoryListCell.swift in Sources */,
+				3201EE761EB0715300C9E28A /* StoryDetailsWorker.swift in Sources */,
+				3201EE721EB0715300C9E28A /* StoryDetailsModels.swift in Sources */,
+				3201EE751EB0715300C9E28A /* StoryDetailsViewController.swift in Sources */,
+				3201EE711EB0715300C9E28A /* StoryDetailsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +654,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7720B6F3D1C455EA0A4FE92C /* Pods-poznaj-app-iosTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = F57YLL8TFF;
 				INFOPLIST_FILE = "poznaj-app-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -633,7 +669,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 57AB441044607A7AE5EB7B7C /* Pods-poznaj-app-iosTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = F57YLL8TFF;
 				INFOPLIST_FILE = "poznaj-app-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
