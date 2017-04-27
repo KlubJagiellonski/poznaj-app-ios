@@ -6,10 +6,11 @@ target 'poznaj-app-ios' do
 pod 'Alamofire', '~> 4.3'
 pod 'SwiftyJSON', '~> 3.1'
 pod 'AlamofireSwiftyJSON', '~> 0.2'
+pod 'Kingfisher', '~> 3.5'
 
   target 'poznaj-app-iosTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'SwiftyJSON', '~> 3.1'
   end
 
 end
