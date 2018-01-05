@@ -31,7 +31,7 @@
         <scene sceneID="xxa-3a-mRb">
             <objects>
                 <tableViewController storyboardIdentifier="StoryListViewController" id="xcM-xP-WUr" customClass="StoryListViewController" customModule="poznaj_app_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="207" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ral-rA-6bm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="207" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ral-rA-6bm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,7 +98,6 @@
                                     <outlet property="numberOfPoints" destination="egI-OF-8jP" id="osd-jx-m1E"/>
                                     <outlet property="photo" destination="qfj-Te-wja" id="WV6-hg-GXp"/>
                                     <outlet property="title" destination="GjQ-Pf-O9d" id="a6d-t0-x8I"/>
-                                    <segue destination="crO-LL-oyT" kind="showDetail" identifier="s" id="X1O-7T-fZb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -112,10 +111,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
+                    <connections>
+                        <segue destination="crO-LL-oyT" kind="show" identifier="ShowStoryDetailsScene" id="yjt-VI-L7g"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6H-q0-dxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="144.3778110944528"/>
+            <point key="canvasLocation" x="124" y="144"/>
         </scene>
         <!--Story Details View Controller-->
         <scene sceneID="WaY-4P-ZQV">
@@ -169,7 +171,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="descriptionLabel" destination="NC1-6S-qba" id="e7O-ak-WCk"/>
+                        <outlet property="descriptionLabel" destination="NC1-6S-qba" id="Vzc-pm-RiK"/>
                         <outlet property="mainImageView" destination="H5a-bk-O0p" id="lf3-4d-uSg"/>
                         <outlet property="mapView" destination="YKb-gk-0Ft" id="VTA-cD-Aia"/>
                         <outlet property="slideShow" destination="QaW-iR-SaY" id="aFp-cc-NkA"/>

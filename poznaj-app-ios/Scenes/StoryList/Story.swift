@@ -27,34 +27,75 @@ struct Duration {
     }
 }
 
+struct Image {
+    let url: URL
+    let copyright: String
+    let title: String
+}
+
 struct Story : Equatable {
     let id: Int64
     let title: String
     let description: String
     let duration: Duration
-    let points : [ApiIDableObject<Point>]
+    let images: [Image]
+   // var points: [IDableModel<Point>]
+    
+//    mutating func set(points :[Point]) {
+//        self.points = points.map{ IDableModel<Point>.some($0) }
+//    }
 }
 
 func ==(lhs: Story, rhs: Story) -> Bool {
     return lhs.id == rhs.id
 }
 
-
-enum ApiIDableObject<T> : ExpressibleByIntegerLiteral {
-
+enum IDableModel<T> {
     case id(UInt)
-    case object(T)
+    case some(T)
     
-    public init(integerLiteral value: IntegerLiteralType){
-        self = .id(UInt(value))
+    var model : T? {
+        get{
+            switch self {
+            case .some(let t):
+                return t
+            default:
+                return nil
+            }
+        }
+        
+        set {
+            if let newValue = newValue {
+                self = IDableModel<T>.some(newValue)
+            }
+        }
     }
     
+    var id : UInt? {
+        get {
+            switch self {
+            case .id(let id):
+                return id
+            default:
+                return nil
+            }
+        }
+    }
+    
+    mutating func update(model: T){
+        self = .some(model)
+    }
 }
 
 struct Point {
     let coordinate : CLLocationCoordinate2D
     let title : String
     let description : String
-    let images : [ApiIDableObject<NSURL>]
-
+    private(set) var images: [IDableModel<Image>]
+    
+    mutating func updateImage(image: Image, id: UInt){
+        if let index = images.index(where: {$0.id == id}){
+            self.images[index] = IDableModel<Image>.some(image)
+        }
+    }
 }

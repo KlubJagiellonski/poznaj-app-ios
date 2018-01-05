@@ -13,20 +13,26 @@ import UIKit
 
 protocol StoryDetailsViewModelBoundary: class
 {
-  func displaySomething(viewModel: StoryDetails.Something.ViewModel)
+    func display(titleAndDescription: StoryDetails.Present.ViewModel)
+    func display(image: StoryDetails.UpdateImage.ViewModel)
 }
 
-class StoryDetailsPresenter: StoryDetailsResponseBoundary
+class StoryDetailsPresenter: StoryDetailsModelBoundary
 {
-  weak var output: StoryDetailsViewModelBoundary!
+    weak var output: StoryDetailsViewModelBoundary!
   
-  // MARK: - Presentation logic
-  
-  func presentSomething(response: StoryDetails.Something.Response)
-  {
-    // NOTE: Format the response from the Interactor and pass the result back to the View Controller
+    // MARK: - Presentation logic
+
+    func presentDetails(model: StoryDetails.Present.Model)
+    {
+        // NOTE: Format the response from the Interactor and pass the result back to the View Controller
+        let story = model.story
+        let viewModel = StoryDetails.Present.ViewModel(title: story.title, description: story.description)
+        output.display(titleAndDescription: viewModel)
+    }
     
-    let viewModel = StoryDetails.Something.ViewModel()
-    output.displaySomething(viewModel: viewModel)
-  }
+    func presentImage(model: StoryDetails.UpdateImage.Model) {
+        let image = model.image
+        output.display(image: StoryDetails.UpdateImage.ViewModel(url: image.url, title: image.title))
+    }
 }

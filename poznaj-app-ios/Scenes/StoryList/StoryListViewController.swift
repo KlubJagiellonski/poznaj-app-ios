@@ -14,7 +14,10 @@ import MapKit
 
 protocol StoryListRequestBoundary
 {
+    var storage : Store { get }
+    
     func fetchStories()
+    func story(row:Int) -> Story
 }
 
 class StoryListViewController: UITableViewController, StoryListViewModelBoundary
@@ -81,5 +84,9 @@ class StoryListViewController: UITableViewController, StoryListViewModelBoundary
         cell?.numberOfPoints.text = model.numberOfPoints
         
         return cell ?? UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router.navigateToStoryDetails()
     }
 }

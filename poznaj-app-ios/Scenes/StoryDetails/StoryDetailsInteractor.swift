@@ -11,28 +11,41 @@
 
 import UIKit
 
-protocol StoryDetailsResponseBoundary
+protocol StoryDetailsModelBoundary
 {
-  func presentSomething(response: StoryDetails.Something.Response)
+    func presentDetails(model: StoryDetails.Present.Model)
+    func presentImage(model: StoryDetails.UpdateImage.Model)
 }
 
 class StoryDetailsInteractor: StoryDetailsRequestBoundary
 {
-  var output: StoryDetailsResponseBoundary!
-  var worker: StoryDetailsWorker!
-  
+    var output: StoryDetailsModelBoundary!
+    
+    var story: Story!
+    
+    var storage: Store!
+    
+    func fetchPoints(){
+        let worker = FetchPointsWorker(storyId:story.id, storage:storage)
+        worker.fetchPoints { [weak self](points, error) in
+          //  self?.story.set(points: points)
+            self?.output.presentDetails(model: StoryDetails.Present.Model(story: (self?.story)!))
+            
+            self?.fetchMainImage()
+        }
+    }
+    //TODO - rewrite
+    func fetchMainImage(){
+//        if let firstPoint = story.points.first?.model,
+//            let firstImageId = firstPoint.images.first?.id {
+//            let worker = FetchImageWorker(id: firstImageId , storage: storage)
+//            worker.fetchImage({ [weak self](image,error) in
+//                self?.story.points[0].model?.updateImage(image: image, id: firstImageId)
+//                self?.output.presentImage(model: StoryDetails.UpdateImage.Model(image: image))
+//            })
+//        }
+        
+    }
   // MARK: - Business logic
   
-  func doSomething(request: StoryDetails.Something.Request)
-  {
-    // NOTE: Create some Worker to do the work
-    
-    worker = StoryDetailsWorker()
-    worker.doSomeWork()
-    
-    // NOTE: Pass the result to the Presenter
-    
-    let response = StoryDetails.Something.Response()
-    output.presentSomething(response: response)
-  }
 }

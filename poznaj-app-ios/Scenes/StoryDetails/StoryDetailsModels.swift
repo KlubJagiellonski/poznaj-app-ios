@@ -13,16 +13,29 @@ import UIKit
 
 struct StoryDetails
 {
-  struct Something
-  {
-    struct Request
+    struct Present
     {
+        struct Model
+        {
+            let story: Story
+        }
+        struct ViewModel
+        {
+            let title: String
+            let description: String
+        }
     }
-    struct Response
+    
+    struct UpdateImage
     {
+        struct Model
+        {
+            let image: Image
+        }
+        
+        struct ViewModel {
+            let url: URL
+            let title: String
+        }
     }
-    struct ViewModel
-    {
-    }
-  }
 }

@@ -14,27 +14,39 @@ import CoreLocation
 
 protocol StoryListResponseBoundary
 {
-    func responded(stories: StoryList.Response)
+    func responded(storyList: StoryList.Response)
 }
 
 class StoryListInteractor: StoryListRequestBoundary
 {
+    let storage: Store
+
     var output: StoryListResponseBoundary!
     var worker: FetchStoriesWorker!
   
     var stories : [Story]! {
         didSet {
-            output.responded(stories: StoryList.Response(stories: stories))
+            output.responded(storyList: StoryList.Response(stories: stories))
         }
     }
+
+    init(storage: Store) {
+        self.storage = storage
+    }
+    
     
   // MARK: - Business logic
   
     func fetchStories() {
     
-    worker = FetchStoriesWorker(storage: MockedStore())
+    worker = FetchStoriesWorker(storage: storage)
         worker.fetchStories(completionHandler: { stories in
             self.stories = stories
         })
     }
+    
+    internal func story(row: Int) -> Story {
+        return stories[row]
+    }
+
 }

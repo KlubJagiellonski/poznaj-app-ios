@@ -15,13 +15,15 @@ import ImageSlideshow
 
 protocol StoryDetailsRequestBoundary
 {
-  func doSomething(request: StoryDetails.Something.Request)
+    var storage : Store! { get set }
+    var story: Story! { get set }
+    func fetchPoints()
 }
 
 class StoryDetailsViewController: UIViewController, StoryDetailsViewModelBoundary
 {
-  var output: StoryDetailsRequestBoundary!
-  var router: StoryDetailsRouter!
+    var output: StoryDetailsRequestBoundary!
+    var router: StoryDetailsRouter!
   
     
     @IBOutlet weak var mainImageView: UIImageView!
@@ -32,36 +34,27 @@ class StoryDetailsViewController: UIViewController, StoryDetailsViewModelBoundar
     
   // MARK: - Object lifecycle
   
-  override func awakeFromNib()
-  {
-    super.awakeFromNib()
-    StoryDetailsConfigurator.sharedInstance.configure(viewController: self)
-  }
+    override func awakeFromNib()
+    {
+        super.awakeFromNib()
+        StoryDetailsConfigurator.sharedInstance.configure(viewController: self)
+    }
   
-  // MARK: - View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomethingOnLoad()
-  }
-  
+    override func viewDidLoad() {
+        output.fetchPoints()
+    }
+    
   // MARK: - Event handling
   
-  func doSomethingOnLoad()
-  {
-    // NOTE: Ask the Interactor to do some work
-    
-    let request = StoryDetails.Something.Request()
-    output.doSomething(request: request)
-  }
   
   // MARK: - Display logic
   
-  func displaySomething(viewModel: StoryDetails.Something.ViewModel)
-  {
-    // NOTE: Display the result from the Presenter
+    func display(titleAndDescription: StoryDetails.Present.ViewModel) {
+        self.title = titleAndDescription.title
+        self.descriptionLabel.text = titleAndDescription.description
+    }
     
-    // nameTextField.text = viewModel.name
-  }
+    func display(image: StoryDetails.UpdateImage.ViewModel) {
+        mainImageView.kf.setImage(with: image.url)
+    }
 }

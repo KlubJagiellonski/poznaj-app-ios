@@ -19,6 +19,7 @@ struct ApiImage{
     let id : UInt
     let title : String
     let url : String
+    let copyright : String
 }
 
 struct ApiStory {
@@ -27,7 +28,7 @@ struct ApiStory {
     let description : String
     let duration : String
     let first_point : UInt
-    let points : [UInt]
+    let images: [ApiImage]
 }
 
 struct ApiPoint {
@@ -39,16 +40,20 @@ struct ApiPoint {
 }
 
 class MockedStore : Store {
+    internal func fetchImageURL(id: UInt, completionHandler: @escaping (Image, StoreError?) -> ()) {
+        completionHandler(MockedStore.images.filter{$0.id == id}.map{Image(url:URL(string:$0.url)!, copyright: $0.copyright, title: $0.title)}.first!, nil)
+    }
+
     
     let stories = [
-        ApiStory(id: 1, title: "Story 1", description: "This is description of story 1", duration: "3:4", first_point: 4, points: [4,2,1,3])
+        ApiStory(id: 1, title: "Story 1", description: "This is description of story 1", duration: "3:4", first_point: 4, images: [images[0]])
     ]
     
     static let images = [
-        ApiImage(id: 1, title: "Image 1", url: ""),
-        ApiImage(id: 2, title: "Image 2", url: ""),
-        ApiImage(id: 3, title: "Image 3", url: ""),
-        ApiImage(id: 4, title: "Image 4", url: ""),
+        ApiImage(id: 1, title: "Image 1", url: "http://lorempixel.com/output/animals-q-c-640-480-4.jpg", copyright: "cp1"),
+        ApiImage(id: 2, title: "Image 2", url: "http://lorempixel.com/output/animals-q-c-640-480-4.jpg", copyright: "cp2"),
+        ApiImage(id: 3, title: "Image 3", url: "http://lorempixel.com/output/animals-q-c-640-480-4.jpg", copyright: "cp3"),
+        ApiImage(id: 4, title: "Image 4", url: "http://lorempixel.com/output/animals-q-c-640-480-4.jpg", copyright: "cp4$"),
         ]
     
     let points = [
@@ -60,18 +65,16 @@ class MockedStore : Store {
     
     
     
-    func fetchStories(_ completionHandler: @escaping(_ stories:[Story], _ error: StoreError? ) -> ()) {
+    func fetchStories(completionHandler: @escaping(_ stories:[Story], _ error: StoreError? ) -> ()) {
         completionHandler(
             stories.map({ (apiStory:ApiStory) -> Story in
-                return Story(id:Int64(apiStory.id), title:apiStory.title, description: apiStory.description, duration: Duration(string: apiStory.duration)!, points: apiStory.points.map({ (id) -> ApiIDableObject<Point> in
-                        return ApiIDableObject.id(id)
-                }) )
+                return Story(id:Int64(apiStory.id), title:apiStory.title, description: apiStory.description, duration: Duration(string: apiStory.duration)!, images: apiStory.images.map { Image(url: URL(string: $0.url)!, copyright: $0.copyright, title: $0.title) })
             })
             , nil)
     }
     
-    internal func fetchStoryDetails(_ completionHandler: @escaping ([Point], StoreError?) -> ()) {
-        completionHandler({points.map({Point(coordinate:CLLocationCoordinate2D($0.coordinates.0, $0.coordinates.1), title:$0.title, description:$0.description, images:$0.images.map({ApiIDableObject.object(NSURL(string: $0.url)!)}))})}(),nil)
+    internal func fetchStoryDetails(id: UInt, completionHandler: @escaping ([Point], StoreError?) -> ()) {
+        completionHandler({points.map({Point(coordinate:CLLocationCoordinate2D($0.coordinates.0, $0.coordinates.1), title:$0.title, description:$0.description,images:$0.images.map({IDableModel.id($0.id)}))})}(),nil)
     }
 
 }

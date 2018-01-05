@@ -11,7 +11,7 @@
 
 import UIKit
 
-class StoryDetailsWorker
+class FetchStoryDetailsWorker
 {
   // MARK: - Business Logic
   

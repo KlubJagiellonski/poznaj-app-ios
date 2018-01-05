@@ -18,11 +18,14 @@ protocol StoryListViewModelBoundary: class
 
 class StoryListPresenter: StoryListResponseBoundary
 {
+
   weak var output: StoryListViewModelBoundary!
   
   // MARK: - Presentation logic
     
-    func responded(stories: StoryList.Response) {
-        output.display(stories: stories.stories.map({ StoryList.ViewModel.Story(title: $0.title, description: $0.description, duration: "\($0.duration.hours):\($0.duration.minutes)", numberOfPoints: String($0.points.count) ) }))
+    func responded(storyList: StoryList.Response) {
+//        output.display(stories: storyList.stories.map({ StoryList.ViewModel.Story(title: $0.title, description: $0.description, duration: "\($0.duration.hours):\($0.duration.minutes)", numberOfPoints: String($0.points.count) )
+//            
+//        }))
     }
 }
