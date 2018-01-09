@@ -33,7 +33,7 @@ struct StoryList
             let title : String
             let description : String
             let duration : String
-            let numberOfPoints : String
+            let images : [Image]
         }
     }
 }

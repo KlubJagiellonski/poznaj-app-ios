@@ -39,7 +39,7 @@ class StoryListConfigurator
     let presenter = StoryListPresenter()
     presenter.output = viewController
     
-    let interactor = StoryListInteractor(storage: MockedStore())
+    let interactor = StoryListInteractor(storage: APIStore())
     interactor.output = presenter
     
     viewController.output = interactor

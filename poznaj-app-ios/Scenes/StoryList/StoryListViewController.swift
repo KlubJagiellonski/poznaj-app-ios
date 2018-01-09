@@ -81,7 +81,9 @@ class StoryListViewController: UITableViewController, StoryListViewModelBoundary
         cell?.title.text = model.title
         cell?.aDescription.text = model.description
         cell?.duration.text = model.duration
-        cell?.numberOfPoints.text = model.numberOfPoints
+        if let imageUrl = model.images.first?.url{
+            cell?.photo.kf.setImage(with: imageUrl)
+        }
         
         return cell ?? UITableViewCell()
     }

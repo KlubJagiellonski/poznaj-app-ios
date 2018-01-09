@@ -82,9 +82,16 @@ class APIStore : Store {
                             let title = json.dictionary?["title"]?.string,
                             let description = json.dictionary?["description"]?.string,
                             let durationString = json.dictionary?["duration"]?.string,
-                            let duration = Duration(string:durationString){
+                            let duration = Duration(string:durationString),
+                            let imagesArray = json.dictionary?["story_images"]?.array {
+                            let images = imagesArray.flatMap({ json -> Image? in
+                                guard let title = json["title"].string,
+                                    let copyright = json["copyright"].string,
+                                    let imageFile = json["image_file"].string,
+                                    let url = URL(string: imageFile) else {return nil}
+                                return Image(url: url, copyright: copyright, title: title)})
                             
-                            return Story(id: id, title: title, description: description, duration: duration, images: [])
+                            return Story(id: id, title: title, description: description, duration: duration, images: images )
                         }
                         return nil
                     })

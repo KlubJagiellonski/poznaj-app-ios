@@ -13,6 +13,5 @@ class StoryListCell: UITableViewCell {
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var duration: UILabel!
-    @IBOutlet weak var numberOfPoints: UILabel!
     @IBOutlet weak var aDescription: UILabel!
 }

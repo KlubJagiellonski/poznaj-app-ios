@@ -24,8 +24,9 @@ class StoryListPresenter: StoryListResponseBoundary
   // MARK: - Presentation logic
     
     func responded(storyList: StoryList.Response) {
-//        output.display(stories: storyList.stories.map({ StoryList.ViewModel.Story(title: $0.title, description: $0.description, duration: "\($0.duration.hours):\($0.duration.minutes)", numberOfPoints: String($0.points.count) )
-//            
-//        }))
+        
+        output.display(stories: storyList.stories.map({ StoryList.ViewModel.Story(title: $0.title, description: $0.description, duration: "\($0.duration.hours):\($0.duration.minutes)", images: $0.images )
+            
+        }))
     }
 }
