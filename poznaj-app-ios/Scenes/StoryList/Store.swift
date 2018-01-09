@@ -10,8 +10,8 @@ import Foundation
 
 protocol Store {
     func fetchStories(completionHandler: @escaping(_ stories:[Story], _ error: StoreError? ) -> ()) -> ()
-    func fetchStoryDetails(id: UInt,completionHandler: @escaping(_ points:[Point], _ error: StoreError? ) -> ()) -> ()
-    func fetchImageURL(id: UInt, completionHandler: @escaping(_ image: Image, _ error: StoreError? ) -> ()) -> ()
+    func fetchStoryPoints(for id: Int,completionHandler: @escaping(_ points:[Point], _ error: StoreError? ) -> ()) -> ()
+//    func fetchStoryDetails(id: UInt,completionHandler: @escaping(_ points:[Point], _ error: StoreError? ) -> ()) -> ()
 }
 
 enum StoreError: Equatable, Error

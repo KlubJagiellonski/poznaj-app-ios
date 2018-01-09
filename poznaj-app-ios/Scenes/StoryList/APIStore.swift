@@ -12,6 +12,10 @@ import AlamofireSwiftyJSON
 import CoreLocation
 
 class APIStore : Store {
+    func fetchStoryPoints(for id: Int, completionHandler: @escaping ([Point], StoreError?) -> ()) {
+        //TODO - add implementation
+    }
+    
     
 //    HTTP 200 OK
 //    Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -48,8 +52,14 @@ class APIStore : Store {
                             let properties = dictionary["properties"],
                             let title = properties["title"].string,
                             let description = properties["description"].string,
-                            let images = properties["images"].array?.map({ return IDableModel<Image>.id($0.uIntValue) }){
-    
+                            let imagesArray = properties["point_images"].array {
+                                let images = imagesArray.flatMap({ json -> Image? in
+                                    guard let title = json["title"].string,
+                                        let copyright = json["copyright"].string,
+                                        let imageFile = json["image_file"].string,
+                                        let url = URL(string: imageFile) else {return nil}
+                                    return Image(url: url, copyright: copyright, title: title)})
+                            
                             return Point(coordinate: CLLocationCoordinate2DMake(latitude, longitude), title: title, description: description, images: images)
                         }
                         return nil

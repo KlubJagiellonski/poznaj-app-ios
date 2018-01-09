@@ -17,7 +17,7 @@ class FetchImageWorker {
         self.storage = storage
     }
     
-    func fetchImage(_ completionHandler: @escaping(_ image:Image, _ error: StoreError? ) -> ()){
-        storage.fetchImageURL(id: id, completionHandler: completionHandler)
-    }
+//    func fetchImage(_ completionHandler: @escaping(_ image:Image, _ error: StoreError? ) -> ()){
+//        storage.fetchImageURL(id: id, completionHandler: completionHandler)
+//    }
 }

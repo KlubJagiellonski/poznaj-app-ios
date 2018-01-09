@@ -18,6 +18,6 @@ class FetchPointsWorker {
     }
     
     func fetchPoints(_ completionHandler: @escaping(_ points:[Point], _ error: StoreError? ) -> ()){
-        storage.fetchStoryDetails(id:UInt(storyId), completionHandler: completionHandler)
+        storage.fetchStoryPoints(for: Int(storyId), completionHandler: completionHandler)
     }
 }

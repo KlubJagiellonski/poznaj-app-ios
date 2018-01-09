@@ -91,11 +91,6 @@ struct Point {
     let coordinate : CLLocationCoordinate2D
     let title : String
     let description : String
-    private(set) var images: [IDableModel<Image>]
+    let images: [Image]
     
-    mutating func updateImage(image: Image, id: UInt){
-        if let index = images.index(where: {$0.id == id}){
-            self.images[index] = IDableModel<Image>.some(image)
-        }
-    }
 }
