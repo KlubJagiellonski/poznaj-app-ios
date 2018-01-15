@@ -4,15 +4,15 @@ target 'poznaj-app-ios' do
   use_frameworks!
 
 pod 'Alamofire', '~> 4.6'
-pod 'SwiftyJSON', '~> 3.1'
-pod 'AlamofireSwiftyJSON', '~> 0.2'
-pod 'Kingfisher', '~> 3.5'
+pod 'SwiftyJSON', '~> 4.0’
+pod 'AlamofireSwiftyJSON', :git => 'git@github.com:danielStokowski/AlamofireSwiftyJSON.git'
+pod 'Kingfisher', '~> 4.0'
 pod 'ImageSlideshow', '~> 1.2'
 pod 'ImageSlideshow/Kingfisher'
 
   target 'poznaj-app-iosTests' do
     inherit! :search_paths
-    pod 'SwiftyJSON', '~> 3.1'
+    pod 'SwiftyJSON', '~> 4.0’
   end
 
 end
