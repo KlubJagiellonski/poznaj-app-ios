@@ -14,28 +14,19 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.6)
-  - AlamofireSwiftyJSON (from `git@github.com:danielStokowski/AlamofireSwiftyJSON.git`)
+  - AlamofireSwiftyJSON (~> 1.0)
   - ImageSlideshow (~> 1.2)
   - ImageSlideshow/Kingfisher
   - Kingfisher (~> 4.0)
   - SwiftyJSON (~> 4.0)
 
-EXTERNAL SOURCES:
-  AlamofireSwiftyJSON:
-    :git: git@github.com:danielStokowski/AlamofireSwiftyJSON.git
-
-CHECKOUT OPTIONS:
-  AlamofireSwiftyJSON:
-    :commit: f9945616b09de34b382a8e86d9a95ed73c8db831
-    :git: git@github.com:danielStokowski/AlamofireSwiftyJSON.git
-
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  AlamofireSwiftyJSON: c8bf09e7169c3d7885e568860bc1277226aac5dd
+  AlamofireSwiftyJSON: ad896b68b586aea5de8ddba641ad3b402b8d5511
   ImageSlideshow: 1bb0e610e28a71e8936d57265d882f61714a470b
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: f69e31b61d984c2dd5ab15c4d3176cb967b434d8
+PODFILE CHECKSUM: c7fe58e6fd94c9468eff35fa37cb96c4197ed00d
 
 COCOAPODS: 1.3.1

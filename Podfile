@@ -5,7 +5,7 @@ target 'poznaj-app-ios' do
 
 pod 'Alamofire', '~> 4.6'
 pod 'SwiftyJSON', '~> 4.0’
-pod 'AlamofireSwiftyJSON', :git => 'git@github.com:danielStokowski/AlamofireSwiftyJSON.git'
+pod 'AlamofireSwiftyJSON', '~> 1.0'
 pod 'Kingfisher', '~> 4.0'
 pod 'ImageSlideshow', '~> 1.2'
 pod 'ImageSlideshow/Kingfisher'
